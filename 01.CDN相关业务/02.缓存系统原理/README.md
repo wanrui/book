@@ -1,17 +1,18 @@
 # 01.几个平台架构实现方式不同
-- 015平台nginx(lua+redis实现部分策略控制) +vcache
-- 061平台nginx） +vcache
-- gsa.tbcache+haproxy +nds+rcs
+
+* 015平台nginx\(lua+redis实现部分策略控制\) +vcache
+* 061平台nginx） +vcache
+* gsa.tbcache+haproxy +nds+rcs
 
 关注定时脚本的一些操作，日志时间上的转换。
+
 # 02.ats某些参数和工具
 
-- 只缓存服务器给出明确指令的返回结果
-- 不缓存任何带cookie的返回结果
-- 不缓存任何>400的返回结果
-- 不缓存任何Body是空的返回结果
-- 不缓存Range返回的返回结果
-
+* 只缓存服务器给出明确指令的返回结果
+* 不缓存任何带cookie的返回结果
+* 不缓存任何&gt;400的返回结果
+* 不缓存任何Body是空的返回结果
+* 不缓存Range返回的返回结果
 
 ```
  # cache responses to cookies has 5 options:
@@ -76,8 +77,25 @@ CONFIG proxy.config.http.cache.ignore_accept_charset_mismatch INT 2
 
 # 03.插件的逻辑
 
-见逻辑图
+
+## 3.1.事件时序图
+![](/assets/01.事件时序图.png)
+## 3.2.重写重存
+![](/assets/02.重写重存.png)
+## 3.3. transform插件
+![](/assets/03.transform插件.png)
+## 3.4. 302插件
+![](/assets/04.302插件.png)
+## 3.5. cache range
+![](/assets/05.cache range.png)
+
+
+
+
+
+
 
 # 04.测试
 
 见wiki
+
