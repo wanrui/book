@@ -87,7 +87,7 @@ CONFIG proxy.config.http.cache.ignore_accept_charset_mismatch INT 2
 ## 3.4. 302插件
 ![](/assets/04.302插件.png)
 ## 3.5. cache range
-![](/assets/05.cache range.png)
+![](/assets/05.cacherange.png)
 
 
 
